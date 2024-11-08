@@ -1,5 +1,5 @@
 # React Hook Library
-### Hook
+### Hooks
 - useReducer
 - useEffect
 - useImperativeHandle
