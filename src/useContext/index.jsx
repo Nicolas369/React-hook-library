@@ -6,28 +6,28 @@ const ContextProvider = createContext(defaultValue);
 
 
 const InsideComponent1 = () => {
-    const { context } = useContext(ContextProvider)[0];
+    const { value } = useContext(ContextProvider)[0];
     return (
         <>
-            <p> context value: { context }</p>
+            <p> context value: { value }</p>
         </> 
     );
 }
 
 const InsideComponent2 = () => {
-    const { context } = useContext(ContextProvider)[1];
+    const { value } = useContext(ContextProvider)[1];
     return  (
         <>
-            <p> context value: { context } <br /></p>
+            <p> context value: { value } <br /></p>
         </> 
     );
 }
 
 const InsideComponent3 = () => {
-    const { context } = useContext(ContextProvider)[2];
+    const { value } = useContext(ContextProvider)[2];
     return (
         <>
-            <p> context value: { context }</p>
+            <p> context value: { value }</p>
         </> 
     );
 }
@@ -35,13 +35,13 @@ const InsideComponent3 = () => {
 const DemoUseContext = () => {
     const context = [
         {
-            context: 1,
+            value: 1,
         },
         {
-            context: 2,
+            value: 2,
         },
         {
-            context: 3,
+            value: 3,
         }
     ];
 

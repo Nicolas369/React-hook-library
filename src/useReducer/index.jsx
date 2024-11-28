@@ -25,16 +25,19 @@ const Paginator = (props) => {
     }
 
     return (
-        <div className="paginator-container">
+      <div className="paginator-container">
+        <h1>{pages[page].hook}</h1>
+        <div className="paginator-page">
 
-            { pages[page].component }
+          { pages[page].component }
 
-            <div className='pagination-btn'>
-                <button onClick={prevPage}>prev</button>
-                <p> page { page } </p>
-                <button onClick={nextPage}>next</button>
-            </div>
+          <div className='pagination-btn'>
+              <button onClick={prevPage}>prev</button>
+              <p> page { page } </p>
+              <button onClick={nextPage}>next</button>
+          </div>
         </div>
+      </div>
     )
 }
 

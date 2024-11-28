@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 const componentCode = [
     `const DemoComponent = () => {`,
@@ -13,10 +13,12 @@ const componentCode = [
 ];
 
 const DemoComponent = () => {
-    
-    useEffect(() => console.log("useEffect"), []);
 
-    useLayoutEffect(() => {console.clear(); console.log("useLayoutEffect")}, []);
+    const executionCount = useRef(0);
+    
+    useEffect(() => console.log(++executionCount.current, "useEffect"), []);
+
+    useLayoutEffect(() => {console.clear(); console.log(++executionCount.current, "useLayoutEffect")}, []);
 
     return (
         <div>

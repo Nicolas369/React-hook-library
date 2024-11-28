@@ -1,9 +1,9 @@
-import './App.css';
 import { Container } from './useImperativeHandle/container';
 import DemoLayoutEffect from "./useLayoutEffect"
 import Paginator from "./useReducer"
 import DemoUseEffect from "./useEffect"
 import DemoUseContext from "./useContext";
+import DemoUseTransition from "./useTransition";
 
 function App() {
 
@@ -26,15 +26,17 @@ function App() {
     },
     {
       hook: "useContext",
-      component: <DemoUseContext/>
+      component: <DemoUseContext />
+    },
+    {
+      hook: "useTransition",
+      component: <DemoUseTransition />
     }
   ];
 
   return (
     <div className="App">
-      <header className="App-header">
-       <Paginator pages={pages} />
-      </header>
+      <Paginator pages={pages} />
     </div>
   );
 }

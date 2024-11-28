@@ -10,6 +10,7 @@ export const Container = () => {
     return <div>
 
         <Counter ref={childRef} />
+        
         <button onClick={resetCounter}>reset</button>
 
         <p>

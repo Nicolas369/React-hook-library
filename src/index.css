@@ -21,6 +21,19 @@ button {
   border-radius: 6px;
   margin: 3px;
   border: none; 
+  cursor: pointer;
+}
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .pagination-btn {
@@ -36,11 +49,19 @@ button {
 }
 
 .paginator-container {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.paginator-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .dom-effect-example {
@@ -53,4 +74,35 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.transition-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  flex: 1;
+}
+
+.transition-tabs {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow: auto;
+  margin-top: 1rem;
+}
+
+.transition-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.transition-slow-tab {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5rem;
+
+  margin-bottom: 4rem;
 }
