@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body span { 
+  font-family: monospace;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -19,7 +27,7 @@ button {
   font-family: monospace;
   background-color: blueviolet;
   border-radius: 6px;
-  margin: 3px;
+  margin: 1rem;
   border: none; 
   cursor: pointer;
 }
@@ -28,6 +36,8 @@ button {
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,32 +46,66 @@ button {
   color: white;
 }
 
-.pagination-btn {
-  width: 100%;
+.paginator-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 0;
-  position: fixed;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.paginator-title {
+  font-size: 2rem;
+  height: 5vh;
+  font-weight: 700;
+}
+
+.paginator-page {
+  height: 75vh;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2.5rem;
+  box-sizing: border-box;
+}
+
+.paginator-page::-webkit-scrollbar {
+  display: none;
+}
+
+.pagination-btn {
+  height: 15vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0px 1rem;
   box-sizing: border-box;
   color: #ffffff;
 }
 
-.paginator-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-grow: 1;
+.layout-effect-container {
+  padding-top: .25rem;
+  height: 100%;
 }
 
-.paginator-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-grow: 1;
+.layout-effect-container span {
+  font-family: monospace;
+}
+
+.layout-effect-container img {
+  height: 75vh;
+}
+
+.layout-effect-code { 
+  font-family: monospace;
+  padding: 10px;
+  border: solid 1px #ffffff;
+  border-radius: 6px;
+  text-align: left;
 }
 
 .dom-effect-example {
@@ -76,24 +120,50 @@ button {
   align-items: center;
 }
 
-.transition-container {
+.transition-modal {
+  width: 70vw;
+  
   display: flex;
+  margin-top: 2rem;
   align-items: center;
   flex-direction: column;
   justify-content: start;
-  flex: 1;
+  
+  border: solid 2px #ffffff;
+  border-radius: 6px;
+}
+
+.transition-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .transition-tabs {
-  width: 100%;
-  height: 300px;
+  min-width: 100%;
+  max-height: 250px;
+  height: fit-content;
+  padding: 1rem;
   display: flex;
   overflow: auto;
-  margin-top: 1rem;
+  border: solid #ffffff;
+  border-width: 2px 0px 0px 0px;
+  box-sizing: border-box;
 }
 
 .transition-tabs::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+  
+}
+
+.transition-tabs::-webkit-scrollbar-track {
+  border: solid #ffffff;
+  border-width: 0px 0px 0px 2px;
+}
+
+.transition-tabs::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
 }
 
 .transition-slow-tab {

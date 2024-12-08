@@ -1,10 +1,6 @@
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { TabSimple } from "./tab-simple";
 import TabSlow from "./tab-slow";
-
-/**
- * useTransition: is a React Hook that lets you update the state without blocking the UI.
- */
 
 function DemoComponent() {
     const [isPending, startTransition] = useTransition();
@@ -17,22 +13,46 @@ function DemoComponent() {
     }
 
     return (
-        <div className="transition-container">  
-            <div>
-                <button onClick={() => changeTab(0)}> tab clear  </button>
-                <button onClick={() => changeTab(1)}> tab simple </button>
-                <button onClick={() => changeTab(2)}> tab slow   </button>
-            </div> 
-            
-            <div className="transition-tabs">
-                {tab === 0 && <p> Select one tab </p>}
-                {tab === 1 && <TabSimple/>}
-                {tab === 2 && <TabSlow/>}
-            </div>
+        <div>
 
+            <div className="transition-modal">
+
+                <div>
+                    <button onClick={() => setTab(0)}> clear </button>
+                    <button onClick={() => setTab(2)}> tab slow </button>
+                    <button onClick={() => changeTab(1)}> tab simple </button>
+                    <button onClick={() => changeTab(3)}> tab slow with transition </button>
+                </div>
+                
+                <div className="transition-tabs">
+                    {tab === 0 && <p> Select one tab </p>}
+                    {tab === 1 && <TabSimple/>}
+                    {tab === 2 && <TabSlow/>}
+                    {tab === 3 && <TabSlow/>}
+                </div>
+
+            </div>
+            
             {isPending && <p> loading... </p>}
+
         </div>
     )
 }
 
-export default DemoComponent;
+const Component = () => {
+    const [count, setCount] = useState(0);
+
+    useEffect(()=> {
+        const interval = setInterval(() => setCount(prevCount => prevCount + 1), 500);
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="transition-container">
+            <span>{ count }</span>
+            <DemoComponent />
+        </div>
+    )
+}
+
+export default Component;

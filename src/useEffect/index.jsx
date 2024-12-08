@@ -22,7 +22,7 @@ const DemoUseEffect = (props) => {
         props.count
     ]);
 
-    return (<p>open the console <br/> {props.count}</p>)
+    return (<span>open the console <br/> {props.count}</span>)
 }
 
 

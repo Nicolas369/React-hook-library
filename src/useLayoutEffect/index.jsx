@@ -16,27 +16,31 @@ const DemoComponent = () => {
 
     const executionCount = useRef(0);
     
+    // runs second
     useEffect(() => console.log(++executionCount.current, "useEffect"), []);
 
+    // runs first
     useLayoutEffect(() => {console.clear(); console.log(++executionCount.current, "useLayoutEffect")}, []);
 
     return (
-        <div>
-            <p> 
-                useLayoutEffect runs synchronously after all DOM mutations. <br />
-                runs after the Dom is updated and before the browser paint the changes
+        <div className="layout-effect-container">
+            <span>open the console...</span>
+
+            <p>
+                useLayoutEffect runs synchronously after all DOM mutations.
+                <br />It runs after the Dom is updated and before the browser paint the changes.
             </p>
 
-            <pre style={{fontFamily: "monospace",padding: "25px", border: "solid 1px #ffffff", borderRadius: "6px", textAlign: "left"}}>
-                {componentCode.join("\n")}
-            </pre>
-            
+            <pre className="layout-effect-code">{ componentCode.join("\n") }</pre>
+
             <p>
-                Thats why in this case the "useLayoutEffect" appears in the console first <br />
-                and then the "useEffect" despite the hooks are in an inverse order.
+                That's why the 'useLayoutEffect' log appears in the console first, followed by the 'useEffect' log,
+                <br />despite the fact that the hooks are defined in reverse order.
             </p>
+
+            <img src="/React useEffect vs useLayoutEffect.jpg" alt="" />
         </div>
-    )
+    );
 }
 
 export default DemoComponent;

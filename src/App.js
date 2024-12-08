@@ -4,6 +4,10 @@ import Paginator from "./useReducer"
 import DemoUseEffect from "./useEffect"
 import DemoUseContext from "./useContext";
 import DemoUseTransition from "./useTransition";
+import LazyLoading from "./lazy";
+import DemoSuspense from "./suspense";
+import DemoMemoComponent from "./memo";
+import TestErrorBoundary from "./errorBoundary";
 
 function App() {
 
@@ -17,20 +21,36 @@ function App() {
       component: <DemoUseEffect />
     },
     {
-      hook: "useImperativeHandle",
-      component: <Container />
-    },
-    {
       hook: "useLayoutEffect",
       component: <DemoLayoutEffect />
+    },
+    {
+      hook: "useTransition",
+      component: <DemoUseTransition />
     },
     {
       hook: "useContext",
       component: <DemoUseContext />
     },
     {
-      hook: "useTransition",
-      component: <DemoUseTransition />
+      hook: "Suspense",
+      component: <DemoSuspense />
+    },
+    {
+      hook: "ErrorBoundary",
+      component: <TestErrorBoundary />
+    },
+    {
+      hook: "useImperativeHandle + forwardRef",
+      component: <Container />
+    },
+    {
+      hook: "lazy(load)",
+      component: <LazyLoading />
+    },
+    {
+      hook: "memo(Component)",
+      component: <DemoMemoComponent />
     }
   ];
 

@@ -1,4 +1,3 @@
-
 import { createContext, useContext } from "react";
 
 const defaultValue = {}; // default static last resource value;
