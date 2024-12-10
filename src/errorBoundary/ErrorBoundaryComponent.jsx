@@ -10,16 +10,14 @@ export class ErrorBoundary extends React.Component {
     return { hasError: true, error };
   }
 
+  async actionReboot() {
+    const success = await this.props.reboot();
+    if (success) this.setState({ hasError: false, error: null });
+  }
+
   componentDidCatch(error, errorInfo) {
     console.error("ErrorBoundary caught an error", error, errorInfo);
-
-    if (this.props.reboot) {
-      const timeout = setTimeout(() => {
-        this.props.reboot();
-        this.setState({ hasError: false, error: null });
-        clearTimeout(timeout);
-      }, 5000);
-    }
+    if (this.props.reboot) this.actionReboot();
   }
 
   handleRetry() {

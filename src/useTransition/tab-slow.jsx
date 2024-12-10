@@ -14,7 +14,7 @@ function SlowPost({ index }) {
 
   let startTime = performance.now();
   while (performance.now() - startTime < 3) {
-    // slow the render 3ms
+    // process time 3ms
   }
 
   return <li className="item">Item #{index + 1}</li>;

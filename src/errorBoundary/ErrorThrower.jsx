@@ -10,7 +10,7 @@ export function ErrorThrower() {
     }, 1000);
     
     if ( count === 0 ) {
-      throw new Error("An error has occurred after 5 seconds!");
+      throw new Error("ErrorThrower: Custom Error for demo purposes!");
     }
 
     return () => clearTimeout(timeout);

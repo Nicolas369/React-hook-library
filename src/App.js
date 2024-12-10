@@ -8,6 +8,7 @@ import LazyLoading from "./lazy";
 import DemoSuspense from "./suspense";
 import DemoMemoComponent from "./memo";
 import TestErrorBoundary from "./errorBoundary";
+import DependencyCheckerTestComponent from "./custom/useDependencyChecker/implementation"
 
 function App() {
 
@@ -51,6 +52,10 @@ function App() {
     {
       hook: "memo(Component)",
       component: <DemoMemoComponent />
+    }, 
+    {
+      hook: "custom hook: useDependencyChecker",
+      component: <DependencyCheckerTestComponent />
     }
   ];
 
