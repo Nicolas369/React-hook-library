@@ -1,14 +1,14 @@
-import { Container } from './useImperativeHandle/container';
-import DemoLayoutEffect from "./useLayoutEffect"
-import Paginator from "./useReducer"
-import DemoUseEffect from "./useEffect"
-import DemoUseContext from "./useContext";
-import DemoUseTransition from "./useTransition";
-import LazyLoading from "./lazy";
-import DemoSuspense from "./suspense";
-import DemoMemoComponent from "./memo";
-import TestErrorBoundary from "./errorBoundary";
-import DependencyCheckerTestComponent from "./custom/useDependencyChecker/implementation"
+import { Container } from './native/useImperativeHandle/container';
+import DemoLayoutEffect from "./native/useLayoutEffect"
+import Paginator from "./native/useReducer"
+import DemoUseEffect from "./native/useEffect"
+import DemoUseContext from "./native/useContext";
+import DemoUseTransition from "./native/useTransition";
+import LazyLoading from "./native/lazy";
+import DemoSuspense from "./native/suspense";
+import DemoMemoComponent from "./native/memo";
+import TestErrorBoundary from "./native/errorBoundary";
+import DependencyCheckerTestComponent from "./custom-hooks/useDependencyChecker/implementation"
 
 function App() {
 

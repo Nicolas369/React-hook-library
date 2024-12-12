@@ -11,17 +11,19 @@ export default function DemoComponent() {
       <p>Component {"<ShowAddress />"} will rerender every parent rerender. </p> 
 
       <label>
-        Nombre{': '}
+        Name:
         <input value={name} onChange={e => setName(e.target.value)} />
       </label>
       
       <label>
-        Dirección{': '}
+        Address:
         <input value={address} onChange={e => setAddress(e.target.value)} />
       </label>
       
-      <Greeting name={name} />
-      <ShowAddress address={address} />
+      <div className='basicFlex'>
+        <Greeting name={name} />  {/* component with memo */}
+        <ShowAddress address={address} />
+      </div>
 
     </>
   );

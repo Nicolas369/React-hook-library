@@ -41,8 +41,21 @@ label {
   width: 300px;
 }
 
+pre {
+  width: fit-content;
+  text-align: start;
+}
+
 .w-650 {
   width: 650px;
+}
+
+.h-300 {
+  height: 200px;
+}
+
+.position-bottom {
+  align-items: baseline;
 }
 
 .App {
